@@ -1655,7 +1655,7 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-"builder-query-vuetify@file:../library/vue/builder-query-vuetify":
+"builder-query-vuetify@file:../../library/vue/builder-query-vuetify":
   version "1.0.2"
   dependencies:
     vue "^2.6.12"
@@ -2380,7 +2380,7 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
-"daterange-picker-vuetify@file:../library/vue/daterange-picker-vuetify":
+"daterange-picker-vuetify@file:../../library/vue/daterange-picker-vuetify":
   version "1.0.1"
   dependencies:
     vue "^2.6.12"

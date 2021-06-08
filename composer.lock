@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41c53ef81bda2a0fa4849738ae35c9eb",
+    "content-hash": "3e933b7ea5f3b239a9fcfaa13f488fca",
     "packages": [
         {
             "name": "api-platform/core",
@@ -573,12 +573,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2c193548ca5ba7b1d66c9590f079fb2240fd0302"
+                "reference": "2f286f4beaacf3ce57706ececa72622e196e2f5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2c193548ca5ba7b1d66c9590f079fb2240fd0302",
-                "reference": "2c193548ca5ba7b1d66c9590f079fb2240fd0302",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2f286f4beaacf3ce57706ececa72622e196e2f5f",
+                "reference": "2f286f4beaacf3ce57706ececa72622e196e2f5f",
                 "shasum": ""
             },
             "require": {
@@ -589,7 +589,7 @@
                 "php": "^7.1 || ^8"
             },
             "require-dev": {
-                "doctrine/coding-standard": "8.2.0",
+                "doctrine/coding-standard": "9.0.0",
                 "jetbrains/phpstorm-stubs": "2020.2",
                 "phpstan/phpstan": "0.12.81",
                 "phpunit/phpunit": "^7.5.20|^8.5|9.5.0",
@@ -673,7 +673,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-15T21:33:01+00:00"
+            "time": "2021-06-05T17:48:35+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -720,16 +720,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "2.4.1",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "7f472cc85eba050a83fcf38cece87b868877d7e2"
+                "reference": "4202ce675d29e70a8b9ee763bec021b6f44caccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/7f472cc85eba050a83fcf38cece87b868877d7e2",
-                "reference": "7f472cc85eba050a83fcf38cece87b868877d7e2",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/4202ce675d29e70a8b9ee763bec021b6f44caccb",
+                "reference": "4202ce675d29e70a8b9ee763bec021b6f44caccb",
                 "shasum": ""
             },
             "require": {
@@ -812,7 +812,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
-                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.4.1"
+                "source": "https://github.com/doctrine/DoctrineBundle/tree/2.4.2"
             },
             "funding": [
                 {
@@ -828,7 +828,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-01T18:38:32+00:00"
+            "time": "2021-06-05T13:40:39+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -6717,16 +6717,16 @@
         },
         {
             "name": "tlc/doctrineextensions",
-            "version": "v1.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:technolescom/DoctrineExtensions.git",
-                "reference": "008f162f191584a6c37c03a803f718802ba9dd9a"
+                "reference": "cf9d268ae1ecaec1a937372cf0e63bcb21fc512c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/technolescom/DoctrineExtensions/zipball/008f162f191584a6c37c03a803f718802ba9dd9a",
-                "reference": "008f162f191584a6c37c03a803f718802ba9dd9a",
+                "url": "https://api.github.com/repos/technolescom/DoctrineExtensions/zipball/cf9d268ae1ecaec1a937372cf0e63bcb21fc512c",
+                "reference": "cf9d268ae1ecaec1a937372cf0e63bcb21fc512c",
                 "shasum": ""
             },
             "require": {
@@ -6741,6 +6741,7 @@
                 "zf1/zend-date": "^1.12",
                 "zf1/zend-registry": "^1.12"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -6751,6 +6752,14 @@
                 "psr-4": {
                     "DoctrineExtensions\\Tests\\": "tests/"
                 }
+            },
+            "scripts": {
+                "lint": [
+                    "php-cs-fixer fix --ansi --diff --diff-format udiff --show-progress=none --verbose"
+                ],
+                "test": [
+                    "phpunit --colors=always"
+                ]
             },
             "license": [
                 "BSD-3-Clause"
@@ -6772,10 +6781,51 @@
                 "orm"
             ],
             "support": {
-                "source": "https://github.com/technolescom/DoctrineExtensions/tree/v1.3.0",
+                "source": "https://github.com/technolescom/DoctrineExtensions/tree/master",
                 "issues": "https://github.com/technolescom/DoctrineExtensions/issues"
             },
-            "time": "2020-11-29T07:37:23+00:00"
+            "time": "2021-05-14T14:59:06+00:00"
+        },
+        {
+            "name": "tlc/manual-bundle",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "./bundles/ManualBundle",
+                "reference": "89b60f48aab8f2b33755145575b90fb60b52c019"
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "symfony": {
+                    "allow-contrib": false,
+                    "require": "5.3.*"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "tlc\\ManualBundle\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "tlc\\ManualBundle\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "./vendor/bin/simple-phpunit"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "TechnoLesCom manual bundle",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "twig/extra-bundle",
@@ -7430,11 +7480,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "tlc/doctrineextensions": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5",
+        "php": ">=7.4",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },

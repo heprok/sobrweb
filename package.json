@@ -32,15 +32,13 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "builder-query-vuetify": "file:../library/vue/builder-query-vuetify",
-        "daterange-picker-vuetify": "file:../library/vue/daterange-picker-vuetify",
+        "builder-query-vuetify": "file:../../library/vue/builder-query-vuetify",
+        "daterange-picker-vuetify": "file:../../library/vue/daterange-picker-vuetify",
         "chart.js": "2",
         "chartjs-plugin-datalabels": "^0.7.0",
         "moment-timezone": "^0.5.32",
         "tlc-front-components": "^1.0.6",
         "vee-validate": "^3.4.0",
-        "vue-chartist": "^2.3.1",
-        "vue-qrcode-reader": "^2.3.18",
         "vue-snotify": "^3.2.1",
         "vuetify": "^2.3.13"
     }

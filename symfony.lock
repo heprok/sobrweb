@@ -171,6 +171,9 @@
     "qipsius/tcpdf-bundle": {
         "version": "2.0.2"
     },
+    "salamek/php-daterange": {
+        "version": "v1.0.1"
+    },
     "symfony/asset": {
         "version": "v5.3.0"
     },
@@ -457,6 +460,9 @@
         "version": "v1.3.0"
     },
     "tlc/manual-bundle": {
+        "version": "0.1.0"
+    },
+    "tlc/report-bundle": {
         "version": "0.1.0"
     },
     "twig/extra-bundle": {

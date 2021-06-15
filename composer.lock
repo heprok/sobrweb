@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e933b7ea5f3b239a9fcfaa13f488fca",
+    "content-hash": "1c3421dfceaff1ed95d32ff52cd4c1dd",
     "packages": [
         {
             "name": "api-platform/core",
@@ -1254,16 +1254,16 @@
         },
         {
             "name": "doctrine/migrations",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "1c2780df6b58998f411e64973cfa464ba0a06e00"
+                "reference": "8d0c58655cf9d76462d00ec5dd099737e513e86d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/1c2780df6b58998f411e64973cfa464ba0a06e00",
-                "reference": "1c2780df6b58998f411e64973cfa464ba0a06e00",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/8d0c58655cf9d76462d00ec5dd099737e513e86d",
+                "reference": "8d0c58655cf9d76462d00ec5dd099737e513e86d",
                 "shasum": ""
             },
             "require": {
@@ -1338,7 +1338,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/migrations/issues",
-                "source": "https://github.com/doctrine/migrations/tree/3.1.2"
+                "source": "https://github.com/doctrine/migrations/tree/3.1.3"
             },
             "funding": [
                 {
@@ -1354,20 +1354,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-04-24T12:54:34+00:00"
+            "time": "2021-06-10T19:24:33+00:00"
         },
         {
             "name": "doctrine/orm",
-            "version": "2.9.2",
+            "version": "2.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "75b4b88c5b7cebc24ed7251a20c2a5aa027300e1"
+                "reference": "82e77cf5089a1303733f75f0f0ed01be3ab9ec22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/75b4b88c5b7cebc24ed7251a20c2a5aa027300e1",
-                "reference": "75b4b88c5b7cebc24ed7251a20c2a5aa027300e1",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/82e77cf5089a1303733f75f0f0ed01be3ab9ec22",
+                "reference": "82e77cf5089a1303733f75f0f0ed01be3ab9ec22",
                 "shasum": ""
             },
             "require": {
@@ -1444,9 +1444,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/2.9.2"
+                "source": "https://github.com/doctrine/orm/tree/2.9.3"
             },
-            "time": "2021-05-31T09:53:14+00:00"
+            "time": "2021-06-13T10:29:22+00:00"
         },
         {
             "name": "doctrine/persistence",
@@ -2448,6 +2448,54 @@
                 "source": "https://github.com/Qipsius/QipsiusTCPDFBundle/tree/2.0.2"
             },
             "time": "2020-09-22T19:00:11+00:00"
+        },
+        {
+            "name": "salamek/php-daterange",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Salamek/php-daterange.git",
+                "reference": "60ed114bea524eb4b7f8513ed3ab48df17af6f12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Salamek/php-daterange/zipball/60ed114bea524eb4b7f8513ed3ab48df17af6f12",
+                "reference": "60ed114bea524eb4b7f8513ed3ab48df17af6f12",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Schubet",
+                    "homepage": "http://www.salamek.cz"
+                }
+            ],
+            "description": "Php date range implementation, usualy used in PgSQL database",
+            "homepage": "https://github.com/Salamek/php-daterange",
+            "keywords": [
+                "date",
+                "daterange",
+                "pgsql",
+                "range"
+            ],
+            "support": {
+                "issues": "https://github.com/Salamek/php-daterange/issues",
+                "source": "https://github.com/Salamek/php-daterange/tree/master"
+            },
+            "time": "2018-04-01T03:42:09+00:00"
         },
         {
             "name": "symfony/asset",
@@ -4145,6 +4193,53 @@
                 }
             ],
             "time": "2021-06-02T10:07:12+00:00"
+        },
+        {
+            "name": "symfony/orm-pack",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/orm-pack.git",
+                "reference": "357f6362067b1ebb94af321b79f8939fc9118751"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/orm-pack/zipball/357f6362067b1ebb94af321b79f8939fc9118751",
+                "reference": "357f6362067b1ebb94af321b79f8939fc9118751",
+                "shasum": ""
+            },
+            "require": {
+                "composer/package-versions-deprecated": "*",
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/doctrine-migrations-bundle": "*",
+                "doctrine/orm": "*",
+                "symfony/proxy-manager-bridge": "*"
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for the Doctrine ORM",
+            "support": {
+                "issues": "https://github.com/symfony/orm-pack/issues",
+                "source": "https://github.com/symfony/orm-pack/tree/v2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-12-22T16:33:52+00:00"
         },
         {
             "name": "symfony/password-hasher",
@@ -6718,20 +6813,15 @@
         {
             "name": "tlc/doctrineextensions",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:technolescom/DoctrineExtensions.git",
-                "reference": "cf9d268ae1ecaec1a937372cf0e63bcb21fc512c"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/technolescom/DoctrineExtensions/zipball/cf9d268ae1ecaec1a937372cf0e63bcb21fc512c",
-                "reference": "cf9d268ae1ecaec1a937372cf0e63bcb21fc512c",
-                "shasum": ""
+                "type": "path",
+                "url": "/home/ok/prj/library/php/DoctrineExtensions",
+                "reference": "532482d465124760fdfc24fb537014cec33016f9"
             },
             "require": {
                 "doctrine/orm": "^2.7",
-                "php": "^7.2 || ^8.0"
+                "php": "^7.2 || ^8.0",
+                "salamek/php-daterange": "^1.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.14",
@@ -6741,7 +6831,6 @@
                 "zf1/zend-date": "^1.12",
                 "zf1/zend-registry": "^1.12"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -6780,11 +6869,9 @@
                 "doctrine",
                 "orm"
             ],
-            "support": {
-                "source": "https://github.com/technolescom/DoctrineExtensions/tree/master",
-                "issues": "https://github.com/technolescom/DoctrineExtensions/issues"
-            },
-            "time": "2021-05-14T14:59:06+00:00"
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "tlc/manual-bundle",
@@ -6792,10 +6879,12 @@
             "dist": {
                 "type": "path",
                 "url": "./bundles/ManualBundle",
-                "reference": "89b60f48aab8f2b33755145575b90fb60b52c019"
+                "reference": "66817d1dcfa5e060ee2946c400a963ebad635ea6"
             },
             "require": {
-                "php": ">=7.4"
+                "php": ">=7.4",
+                "symfony/orm-pack": "^2.1",
+                "tlc/report-bundle": "^0.1.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -6806,12 +6895,12 @@
             },
             "autoload": {
                 "psr-4": {
-                    "tlc\\ManualBundle\\": "src/"
+                    "Tlc\\ManualBundle\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "tlc\\ManualBundle\\Tests\\": "tests/"
+                    "Tlc\\ManualBundle\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -6823,6 +6912,48 @@
                 "proprietary"
             ],
             "description": "TechnoLesCom manual bundle",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "tlc/report-bundle",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "./bundles/ReportBundle",
+                "reference": "da7a3c2b76bcc24449d8eeb52b294aca8a88f554"
+            },
+            "require": {
+                "php": ">=8.0",
+                "tecnickcom/tcpdf": "^6.4"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "symfony": {
+                    "allow-contrib": false,
+                    "require": "5.3.*"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tlc\\ReportBundle\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tlc\\ReportBundle\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "./vendor/bin/simple-phpunit"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "TechnoLesCom report bundle",
             "transport-options": {
                 "relative": true
             }
@@ -7486,7 +7617,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },

@@ -9,12 +9,16 @@
             "url" : "./bundles/ManualBundle"
         },
         {
-            "type": "vcs",
-            "url": "git@github.com:technolescom/DoctrineExtensions.git"
+            "type" : "path",
+            "url" : "./bundles/ReportBundle"
+        },
+        {
+            "type": "path",
+            "url": "/home/ok/prj/library/php/DoctrineExtensions"
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/core": "^2.6",
@@ -44,6 +48,7 @@
         "symfony/yaml": "5.3.*",
         "tlc/doctrineextensions": "dev-master",
         "tlc/manual-bundle": "^0.1.0",
+        "tlc/report-bundle": "^0.1.0",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },

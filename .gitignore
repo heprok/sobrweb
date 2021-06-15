@@ -15,4 +15,6 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
-/bundles
+*.code-workspace
+src/Entity/backup/
+.key

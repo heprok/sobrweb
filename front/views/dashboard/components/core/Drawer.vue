@@ -93,19 +93,9 @@ export default {
         icon: "mdi-file-chart",
         children: [
           {
-            icon: "mdi-color-helper",
-            title: "Пиломатериалы",
-            to: "board",
-          },
-          {
             icon: "mdi-book-open",
-            title: "Хронология пил-мат",
+            title: "Хронология `брёвен",
             to: "boardregistry",
-          },
-          {
-            icon: "mdi-chevron-double-down",
-            title: "Выгруженные карманы",
-            to: "unload",
           },
           {
             icon: "mdi-account-multiple",
@@ -113,19 +103,9 @@ export default {
             to: "operators",
           },
           {
-            icon: "mdi-filter-remove-outline",
-            title: "Отбойник",
-            to: "lastpocket",
-          },
-          {
             icon: "mdi-clock-fast",
             title: "Простои",
             to: "downtimes",
-          },
-          {
-            icon: "mdi-cards-variant",
-            title: "Остатки в карманах",
-            to: "balancepocket",
           },
           {
             icon: "mdi-comment-alert-outline",

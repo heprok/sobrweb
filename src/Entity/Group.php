@@ -8,7 +8,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\Group as BaseGroup;
 
 #[ORM\Entity(repositoryClass: GroupRepository::class)]
-#[ORM\Table(schema: "ds", name: "group",  options: ["comment" => "Группы параметров досок"])]
+#[ORM\Table(schema: "sobr", name: '"group"',  options: ["comment" => "Группы параметров досок"])]
 
 class Group extends BaseGroup
 {

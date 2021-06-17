@@ -9,7 +9,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\EventType as BaseEventType;
 
 #[ORM\Entity(repositoryClass: EventTypeRepository::class)]
-#[ORM\Table(schema: 'ds', name: "event_type", options: ["comment" => "Типы события"])]
+#[ORM\Table(schema: "sobr", name: "event_type", options: ["comment" => "Типы события"])]
 #[
     ApiResource(
         collectionOperations: ["get", "post"],

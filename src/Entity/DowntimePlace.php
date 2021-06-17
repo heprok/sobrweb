@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\DowntimePlace as BaseDowntimePlace;
 
 #[ORM\Entity(repositoryClass: DowntimePlaceRepository::class)]
-#[ORM\Table(schema: "ds", name: "downtime_place", options: ["comment" => "Места простоя"])]
+#[ORM\Table(schema: "sobr", name: "downtime_place", options: ["comment" => "Места простоя"])]
 #[
     ApiResource(
         collectionOperations: ["get", "post"],

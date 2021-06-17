@@ -9,7 +9,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\BreakShedule as BaseBreakShedule;
 
 #[ORM\Entity(repositoryClass: BreakSheduleRepository::class)]
-#[ORM\Table(schema: "ds", name: "break_shedule", options: ["comment" => "График перерывов"])]
+#[ORM\Table(schema: "sobr", name: "break_shedule", options: ["comment" => "График перерывов"])]
 #[ApiResource(
     collectionOperations: ["get", "post"],
     itemOperations: ["get", "put"],

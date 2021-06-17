@@ -11,7 +11,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\People as BasePeople;
 
 #[ORM\Entity(repositoryClass: PeopleRepository::class)]
-#[ORM\Table(schema: "ds", name: "people", options: ["comment" => "Люди"])]
+#[ORM\Table(schema: "sobr", name: "people", options: ["comment" => "Люди"])]
 #[
     ApiResource(
         collectionOperations: ["get", "post"],

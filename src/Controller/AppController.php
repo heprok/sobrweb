@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
+use App\Repository\DowntimeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Tlc\ManualBundle\Repository\DowntimeRepository;
 
 class AppController extends AbstractController
 {
@@ -20,7 +20,7 @@ class AppController extends AbstractController
     #[Route('/debag', name: 'app1')]
     public function debug(DowntimeRepository $repository): Response
     {
-        $downtime = $repository->findAll();
+        $downtime = $repository->getLastDowntime();
         dd($downtime);
         return $this->render('app/index.html.twig', [
             'controller_name' => 'AppController',

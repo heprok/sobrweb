@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Tlc\ManualBundle\Repository\EventRepository;
+use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiFilter;

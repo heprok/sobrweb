@@ -5,7 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Tlc\ManualBundle\Repository\DowntimeLocationRepository;
+use App\Repository\DowntimeLocationRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Tlc\ManualBundle\Entity\DowntimeLocation as BaseDowntimeLocation;
 

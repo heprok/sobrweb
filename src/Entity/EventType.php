@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Tlc\ManualBundle\Repository\EventTypeRepository;
+use App\Repository\EventTypeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use Tlc\ManualBundle\Repository\StandardLengthRepository;
+use App\Repository\StandardLengthRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Tlc\ManualBundle\Entity\StandardLength as BaseStandardLength;

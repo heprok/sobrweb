@@ -6,8 +6,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\SpeciesRepository;
 use Symfony\Component\Serializer\Annotation\Groups;
-use Tlc\ManualBundle\Repository\SpeciesRepository;
 use Tlc\ManualBundle\Entity\Species as BaseSpecies;
 
 #[

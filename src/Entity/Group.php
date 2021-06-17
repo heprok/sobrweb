@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Tlc\ManualBundle\Repository\GroupRepository;
+use App\Repository\GroupRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\Group as BaseGroup;

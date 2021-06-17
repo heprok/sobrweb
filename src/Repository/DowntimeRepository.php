@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Downtime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Tlc\ManualBundle\Repository\DowntimeRepository as RepositoryDowntimeRepository;
 
 /**
  * @method Downtime|null find($id, $lockMode = null, $lockVersion = null)
@@ -12,11 +13,12 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Downtime[]    findAll()
  * @method Downtime[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DowntimeRepository extends ServiceEntityRepository
+class DowntimeRepository extends RepositoryDowntimeRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Downtime::class);
+        $this->nameClass = Downtime::class;
+        parent::__construct($registry);
     }
 
     // /**

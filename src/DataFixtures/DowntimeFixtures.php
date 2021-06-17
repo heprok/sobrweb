@@ -15,11 +15,11 @@ use Doctrine\Persistence\ObjectManager;
 
 class DowntimeFixtures extends Fixture
 {
-    const COUNT_CAUSE = 1;
-    const COUNT_PLACE = 1;
+    const COUNT_CAUSE = 3;
+    const COUNT_PLACE = 3;
     const COUNT_LOCATION = 2;
     const COUNT_GROUP = 2;
-    const COUNT_DOWNTIME = 1;
+    const COUNT_DOWNTIME = 30;
 
     public function load(ObjectManager $manager)
     {
@@ -38,7 +38,6 @@ class DowntimeFixtures extends Fixture
         for ($i=1; $i <= self::COUNT_LOCATION; $i++) { 
             $location = new DowntimeLocation('Локация ' . $i);
             $arrLocation[] = $location;
-
             $manager->persist($location);
         }
 
@@ -68,6 +67,7 @@ class DowntimeFixtures extends Fixture
             
             $stopTime = new DateTime();
             $stopTime->setTimestamp($randomDatesTimestamp[$i] + 3 * 60);
+            $stopTime = rand(0, 2) % 2 ? $stopTime : 1; 
             $period = new DatePeriod($startTime, new DateInterval('P1D'), $stopTime);
             $downtime->setPeriod($period);
             $downtime->setCause($arrCause[rand(0, self::COUNT_CAUSE - 1)]);

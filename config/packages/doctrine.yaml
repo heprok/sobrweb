@@ -34,7 +34,7 @@ doctrine:
                 alias: App
             # ManualBundle:
             #     is_bundle: true
-            #     type: annotation
+            #     type: attribute
             #     dir: Entity
             #     prefix: 'ManualBundle\Entity'
             #     alias: ManualBundle

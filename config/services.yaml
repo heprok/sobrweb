@@ -23,6 +23,6 @@ services:
 
     Tlc\ManualBundle\Repository\DowntimeRepository:
         tags: ['doctrine.repository_service']
-        autowire: true
+        # autowire: false
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

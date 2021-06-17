@@ -23,17 +23,4 @@ class DowntimeLocation extends BaseDowntimeLocation
 {
     #[ORM\OneToMany(targetEntity: DowntimePlace::class, mappedBy: "location")]
     protected $downtimePlaces;
-
-    public function __construct()
-    {
-        $this->downtimePlaces = new ArrayCollection();
-    }
-
-    /**
-     * @return Collection|DowntimePlace[]
-     */
-    public function getDowntimePlaces(): Collection
-    {
-        return $this->downtimePlaces;
-    }
 }

@@ -22,7 +22,8 @@ use Tlc\ManualBundle\Entity\Downtime as BaseDowntime;
         denormalizationContext: ["groups" => ["downtime:write"]]
     )
 ]
-#[ApiFilter(DateFilter::class, properties: ["drecTimestampKey"])]
+// #[ApiFilter(DateFilter::class, properties: ["drecTimestampKey"])]
+// #[ORM\HasLifecycleCallbacks]
 class Downtime extends BaseDowntime
 {
     #[ORM\ManyToOne(targetEntity: DowntimeCause::class, cascade: ["persist", "refresh"])]
@@ -35,30 +36,4 @@ class Downtime extends BaseDowntime
     #[Groups(["downtime:read"])]
     protected $place;
     
-
-
-    // #[ORM\PrePersist]
-    // #[ORM\PreUpdate]
-    // public function syncDrecTostartTimestampKey(LifecycleEventArgs $event)
-    // {
-    //     dd(1);
-    //     $entityManager = $event->getEntityManager();
-    //     $connection = $entityManager->getConnection();
-    //     $platform = $connection->getDatabasePlatform();
-    //     dump($this->startTimestampKey);
-    //     $this->startTimestampKey = $this->drec->format($platform->getDateTimeFormatString());
-    //     dump($this->startTimestampKey);
-    // }
-
-    // #[ORM\PostLoad]
-    // public function syncstartTimestampKeyToDrec(LifecycleEventArgs $event)
-    // {
-    //     dd(1);
-    //     $entityManager = $event->getEntityManager();
-    //     $connection = $entityManager->getConnection();
-    //     $platform = $connection->getDatabasePlatform();
-    //     dump($this->startTimestampKey);
-    //     $this->drec = DateTime::createFromFormat($platform->getDateTimeTzFormatString(), $this->startTimestampKey) ?:
-    //         \DateTime::createFromFormat($platform->getDateTimeFormatString(), $this->startTimestampKey);
-    // }
 }

@@ -23,6 +23,7 @@ use Tlc\ManualBundle\Filter\DateFilter;
 ]
 #[ApiFilter(DateFilter::class, properties: ["drecTimestampKey"])]
 #[ApiFilter(SearchFilter::class, properties: ["type.id" => "partial", "source.id" => "partial"])]
+#[ORM\HasLifecycleCallbacks]
 class Event extends BaseEvent
 {
     #[ORM\ManyToOne(targetEntity: EventType::class)]

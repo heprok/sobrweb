@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Report\AbstractReport;
-use App\Report\Downtime\DowntimePdfReport;
-use App\Report\Downtime\DowntimeReport;
 use App\Repository\DowntimeRepository;
 use App\Repository\PeopleRepository;
 use App\Repository\ShiftRepository;
@@ -17,6 +14,9 @@ use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Tlc\ManualBundle\Report\Downtime\DowntimePdfReport;
+use Tlc\ManualBundle\Report\Downtime\DowntimeReport;
+use Tlc\ReportBundle\Report\AbstractReport;
 
 #[Route("report/downtimes", name: "report_downtimes_")]
 class DowntimeController extends AbstractController

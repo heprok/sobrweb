@@ -18,6 +18,6 @@ class PeopleRepository extends BasePeopleRepository
     public function __construct(ManagerRegistry $registry)
     {
         $this->nameClass = People::class;
-        parent::__construct($registry, $this->nameClass);
+        parent::__construct($registry);
     }
 }

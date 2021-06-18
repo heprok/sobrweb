@@ -17,13 +17,4 @@ class AppController extends AbstractController
         ]);
     }
 
-    #[Route('/debag', name: 'app1')]
-    public function debug(DowntimeRepository $repository): Response
-    {
-        $downtime = $repository->getLastDowntime();
-        dd($downtime);
-        return $this->render('app/index.html.twig', [
-            'controller_name' => 'AppController',
-        ]);
-    }
 }

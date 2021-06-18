@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Report\AbstractReport;
-use App\Report\Event\EventPdfReport;
-use App\Report\Event\AlertEventReport;
 use App\Repository\EventRepository;
 use App\Repository\PeopleRepository;
 use App\Repository\ShiftRepository;
@@ -16,6 +13,9 @@ use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Tlc\ManualBundle\Report\Event\AlertEventReport;
+use Tlc\ManualBundle\Report\Event\EventPdfReport;
+use Tlc\ReportBundle\Report\AbstractReport;
 
 #[Route("report/event/alert", name: "report_event_alert_")]
 class AlertEventController extends AbstractController

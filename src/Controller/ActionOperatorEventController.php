@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Report\AbstractReport;
-use App\Report\Event\ActionOperatorEventReport;
-use App\Report\Event\EventPdfReport;
+use Tlc\ManualBundle\Report\Event\ActionOperatorEventReport;
+use Tlc\ManualBundle\Report\Event\EventPdfReport;
 use App\Repository\EventRepository;
 use App\Repository\PeopleRepository;
-use App\Repository\ShiftRepository;
 use DateInterval;
 use DatePeriod;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Tlc\ReportBundle\Report\AbstractReport;
 
 #[Route("report/event/action_operator", name: "report_event_action_operator_")]
 class ActionOperatorEventController extends AbstractController

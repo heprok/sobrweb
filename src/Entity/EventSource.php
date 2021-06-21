@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\EventSourceRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\EventSource as BaseEventSource;
 
 #[ORM\Entity(repositoryClass: EventSourceRepository::class)]
@@ -20,5 +19,4 @@ use Tlc\ManualBundle\Entity\EventSource as BaseEventSource;
 ]
 class EventSource extends BaseEventSource
 {
-
 }

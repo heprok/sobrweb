@@ -48,7 +48,6 @@
         "symfony/yaml": "5.3.*",
         "tlc/doctrineextensions": "dev-master",
         "tlc/manual-bundle": "^0.1.0",
-        "tlc/report-bundle": "^0.1.0",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },

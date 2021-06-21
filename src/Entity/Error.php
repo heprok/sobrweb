@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Tlc\ManualBundle\Entity\Error as BaseError;
 
 #[ORM\Entity(repositoryClass: ErrorRepository::class)]
-#[ORM\Table(schema: "sobr",name: "error", options: ["comment" => "Ошибки"])]
+#[ORM\Table(schema: "sobr", name: "error", options: ["comment" => "Ошибки"])]
 #[
     ApiResource(
         collectionOperations: ["get", "post"],
@@ -21,5 +21,4 @@ use Tlc\ManualBundle\Entity\Error as BaseError;
 ]
 class Error extends BaseError
 {
-
 }

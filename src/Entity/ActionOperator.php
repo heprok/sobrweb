@@ -5,7 +5,6 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ActionOperatorRepository;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\ActionOperator as BaseActionOperator;
 
 #[ORM\Entity(repositoryClass: ActionOperatorRepository::class)]

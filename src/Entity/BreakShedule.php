@@ -28,5 +28,4 @@ class BreakShedule extends BaseBreakShedule
     #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
     #[Groups(["break_shedule:read", "break_shedule:write", "downtime_place:read"])]
     protected DowntimeCause $cause;
-
 }

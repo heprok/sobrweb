@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Tlc\ManualBundle\Entity\DowntimeLocation as BaseDowntimeLocation;
 
 #[ORM\Entity(repositoryClass: DowntimeLocationRepository::class)]
-#[ORM\Table(schema: "sobr",name: "downtime_location", options: ["comment" => "Локации простоя"])]
+#[ORM\Table(schema: "sobr", name: "downtime_location", options: ["comment" => "Локации простоя"])]
 #[
     ApiResource(
         collectionOperations: ["get", "post"],

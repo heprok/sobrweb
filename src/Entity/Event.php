@@ -12,7 +12,7 @@ use Tlc\ManualBundle\Entity\Event as BaseEvent;
 use Tlc\ManualBundle\Filter\DateFilter;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
-#[ORM\Table(schema: "sobr",name: "event")]
+#[ORM\Table(schema: "sobr", name: "event")]
 #[
     ApiResource(
         collectionOperations: ["get"],

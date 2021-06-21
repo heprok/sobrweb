@@ -9,7 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Tlc\ManualBundle\Entity\Shift as BaseShift;
 
 #[ORM\Entity(repositoryClass: ShiftRepository::class)]
-// #[ORM\HasLifecycleCallbacks()]
 #[ORM\Table(schema: "sobr", name: "shift", options: ["comment" => "Смены"])]
 #[
     ApiResource(
@@ -26,5 +25,4 @@ class Shift extends BaseShift
     #[ORM\JoinColumn(onDelete: "SET NULL")]
     #[Groups(["shift:read"])]
     protected $people;
-
 }

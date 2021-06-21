@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\EventTypeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Tlc\ManualBundle\Entity\EventType as BaseEventType;
 
 #[ORM\Entity(repositoryClass: EventTypeRepository::class)]

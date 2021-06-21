@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Tlc\ManualBundle\Entity\StandardLength as BaseStandardLength;
 
 #[ORM\Entity(repositoryClass: StandardLengthRepository::class)]
-#[ORM\Table(schema: "sobr",name: "standard_length", options: ["comment" => "Cтандартные длины"])]
+#[ORM\Table(schema: "sobr", name: "standard_length", options: ["comment" => "Cтандартные длины"])]
 #[ApiResource(
     collectionOperations: [
         'get' => ['method' => 'GET', 'path' => '/lengths'],
@@ -29,6 +29,6 @@ use Tlc\ManualBundle\Entity\StandardLength as BaseStandardLength;
         'disable_type_enforcement' => true
     ],
 )]
-class StandardLength extends BaseStandardLength 
+class StandardLength extends BaseStandardLength
 {
 }

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Trasnport;
+use App\Entity\Transport;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Trasnport|null find($id, $lockMode = null, $lockVersion = null)
- * @method Trasnport|null findOneBy(array $criteria, array $orderBy = null)
- * @method Trasnport[]    findAll()
- * @method Trasnport[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Transport|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Transport|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Transport[]    findAll()
+ * @method Transport[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TrasnportRepository extends ServiceEntityRepository
+class TransportRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Trasnport::class);
+        parent::__construct($registry, Transport::class);
     }
 
     // /**
-    //  * @return Trasnport[] Returns an array of Trasnport objects
+    //  * @return Transport[] Returns an array of Transport objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class TrasnportRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Trasnport
+    public function findOneBySomeField($value): ?Transport
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

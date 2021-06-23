@@ -135,6 +135,21 @@ export default {
             to: "people",
           },
           {
+            icon: "mdi-stack-overflow",
+            title: "Штабеля",
+            to: "stack",
+          },
+          {
+            icon: "mdi-quality-high",
+            title: "Качества брёвен",
+            to: "timberquality",
+          },
+          {
+            icon: "mdi-account-star",
+            title: "Поставщики",
+            to: "provider",
+          },
+          {
             icon: "mdi-timetable",
             title: "Рабочее расписание",
             to: "workschedule",

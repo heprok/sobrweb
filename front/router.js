@@ -35,6 +35,21 @@ export default new Router({
           component: () => import('@/views/dashboard/pages/manual/People'),
         },        
         {
+          name: 'Поставщики',
+          path: 'manual/provider',
+          component: () => import('@/views/dashboard/pages/manual/Provider'),
+        },        
+        {
+          name: 'Качества брёвен',
+          path: 'manual/timberquality',
+          component: () => import('@/views/dashboard/pages/manual/TimberQuality'),
+        },        
+        {
+          name: 'Штабеля',
+          path: 'manual/stack',
+          component: () => import('@/views/dashboard/pages/manual/Stack'),
+        },        
+        {
           name: 'Рабочее расписание',
           path: 'manual/workschedule',
           component: () => import('@/views/dashboard/pages/manual/WorkSchedule'),

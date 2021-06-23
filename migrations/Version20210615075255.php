@@ -26,11 +26,11 @@ final class Version20210615075255 extends AbstractMigration
         $this->addSql('COMMENT ON COLUMN sobr.people.fam IS \'Фамилия\'');
         $this->addSql('COMMENT ON COLUMN sobr.people.nam IS \'Имя\'');
         $this->addSql('COMMENT ON COLUMN sobr.people.pat IS \'Отчество\'');
-        $this->addSql('CREATE TABLE people_to_duty (people_id INT NOT NULL, duty_id CHAR(2) NOT NULL, PRIMARY KEY(people_id, duty_id))');
-        $this->addSql('CREATE INDEX IDX_2F76D123147C936 ON people_to_duty (people_id)');
-        $this->addSql('CREATE INDEX IDX_2F76D123A1F9EC1 ON people_to_duty (duty_id)');
-        $this->addSql('ALTER TABLE people_to_duty ADD CONSTRAINT FK_2F76D123147C936 FOREIGN KEY (people_id) REFERENCES sobr.people (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
-        $this->addSql('ALTER TABLE people_to_duty ADD CONSTRAINT FK_2F76D123A1F9EC1 FOREIGN KEY (duty_id) REFERENCES sobr.duty (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('CREATE TABLE sobr.people_to_duty (people_id INT NOT NULL, duty_id CHAR(2) NOT NULL, PRIMARY KEY(people_id, duty_id))');
+        $this->addSql('CREATE INDEX IDX_2F76D123147C936 ON sobr.people_to_duty (people_id)');
+        $this->addSql('CREATE INDEX IDX_2F76D123A1F9EC1 ON sobr.people_to_duty (duty_id)');
+        $this->addSql('ALTER TABLE sobr.people_to_duty ADD CONSTRAINT FK_2F76D123147C936 FOREIGN KEY (people_id) REFERENCES sobr.people (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE sobr.people_to_duty ADD CONSTRAINT FK_2F76D123A1F9EC1 FOREIGN KEY (duty_id) REFERENCES sobr.duty (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE');
     }
 
     public function down(Schema $schema): void

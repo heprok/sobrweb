@@ -2,66 +2,91 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiProperty;
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\TimberRepository;
 use DateTime;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Tlc\ManualBundle\Filter\DateFilter;
 use Tlc\ReportBundle\Entity\BaseEntity;
 
 #[ORM\Entity(repositoryClass: TimberRepository::class)]
 #[ORM\HasLifecycleCallbacks]
 #[ORM\Table(schema: "sobr", name: "timber", options: ["comment" => "Брёвна"])]
+#[
+    ApiResource(
+        collectionOperations: ["get"],
+        itemOperations: ["get"],
+        normalizationContext: ["groups" => ["timber:read"]],
+        denormalizationContext: ["groups" => ["timber:write"]]
+    )
+]
+#[ApiFilter(DateFilter::class, properties: ["drecTimestampKey"])]
 class Timber
 {
     protected DateTime $drec;
 
     #[ORM\Id]
     #[ORM\Column(name: "drec", type: "string", options: ["comment" => 'Дата записи'])]
-    #[Groups(["event:read"])]
+    #[Groups(["timber:read"])]
     #[ApiProperty(identifier: true)]
     protected $drecTimestampKey;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Качество бревна'])]
+    #[Groups(["timber:read"])]
     private int $quality;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Диаметр вершины, мм'])]
+    #[Groups(["timber:read"])]
     private int $top_diam;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Диаметр центра, мм'])]
+    #[Groups(["timber:read"])]
     private int $mid_diam;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Диаметр комля, мм'])]
+    #[Groups(["timber:read"])]
     private int $butt_diam;
 
     #[ORM\Column(type: "float", options: ["comment" => 'Овальность'])]
+    #[Groups(["timber:read"])]
     private float $ovality;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Длина бревна, мм.'])]
+    #[Groups(["timber:read"])]
     private int $length;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Сбег вершины см/м'])]
+    #[Groups(["timber:read"])]
     private int $top_taper;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Сбег комля см/м'])]
+    #[Groups(["timber:read"])]
     private int $butt_taper;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Сбег см/м'])]
+    #[Groups(["timber:read"])]
     private int $taper;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Кривизна, см/м'])]
+    #[Groups(["timber:read"])]
     private int $sweep;
 
     #[ORM\Column(type: "smallint", options: ["comment" => 'Карман'])]
+    #[Groups(["timber:read"])]
     private int $pocket;
 
     #[ORM\ManyToOne(targetEntity: Species::class)]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(["timber:read"])]
     private $species;
 
     #[ORM\ManyToOne(targetEntity: Batch::class)]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(["timber:read"])]
     private $batch;
 
     public function getDrecTimestampKey(): ?int
@@ -247,6 +272,12 @@ class Timber
         $this->pocket = $pocket;
 
         return $this;
+    }
+
+    #[Groups(["timber:read"])]
+    public function getStartTime(): ?string
+    {
+        return $this->drec->format(BaseEntity::TIME_FOR_FRONT);
     }
 
 

@@ -27,7 +27,7 @@ class Transport
     protected int $id;
 
     #[ORM\Column(type: "string", length: 128, unique: true, options: ["comment" => "Название"])]
-    #[Groups(["transport:read", "transport:write"])]
+    #[Groups(["transport:read", "transport:write","batch:read"])]
     protected string $name;
 
     public function __construct(string $name)

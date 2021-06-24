@@ -76,6 +76,16 @@ export default new Router({
         },   
         //reports 
         {
+          name: 'Хронология брёвен ',
+          path: 'report/timberregistry',
+          component: () => import('@/views/dashboard/pages/report/timber/Registry'),
+        },        
+        {
+          name: 'Бревна',
+          path: 'report/timber',
+          component: () => import('@/views/dashboard/pages/report/timber/Timber'),
+        },        
+        {
           name: 'Простои ',
           path: 'report/downtimes',
           component: () => import('@/views/dashboard/pages/report/Downtime'),

@@ -12,7 +12,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class TimberFixtures extends Fixture implements DependentFixtureInterface
 {
-    const COUNT_TIMBER = 2000;
+    const COUNT_TIMBER = 7000;
     public function load(ObjectManager $manager)
     {
 

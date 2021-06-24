@@ -27,7 +27,7 @@ class Provider
     protected int $id;
 
     #[ORM\Column(type: "string", length: 128, unique: true, options: ["comment" => "Имя поставщика"])]
-    #[Groups(["provider:read", "provider:write"])]
+    #[Groups(["provider:read", "provider:write","batch:read"])]
     protected string $name;
 
     public function __construct(string $name)

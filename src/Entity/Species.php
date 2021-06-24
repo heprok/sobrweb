@@ -22,4 +22,9 @@ use Tlc\ManualBundle\Entity\Species as BaseSpecies;
 #[ORM\Entity(repositoryClass: SpeciesRepository::class)]
 class Species extends BaseSpecies
 {
+    #[Groups('timber:read')]
+    public function getName(): ?string
+    {
+        return parent::getName();
+    }
 }

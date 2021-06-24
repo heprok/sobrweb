@@ -11,7 +11,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class BatchFixtures extends Fixture implements DependentFixtureInterface
 {
-    const COUNT_BATCH = 4;
+    const COUNT_BATCH = 6;
     public function load(ObjectManager $manager)
     {
         $providers = $manager->getRepository(Provider::class)->findAll();

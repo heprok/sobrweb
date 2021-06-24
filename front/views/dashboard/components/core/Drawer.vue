@@ -94,8 +94,13 @@ export default {
         children: [
           {
             icon: "mdi-book-open",
-            title: "Хронология `брёвен",
-            to: "boardregistry",
+            title: "Хронология брёвен",
+            to: "timberregistry",
+          },
+          {
+            icon: "mdi-color-helper",
+            title: "Брёвна",
+            to: "timber",
           },
           {
             icon: "mdi-account-multiple",

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Report\Downtime;
+namespace App\Report\Timber;
 
 use App\Repository\TimberRepository;
 use Tlc\ReportBundle\Dataset\PdfDataset;

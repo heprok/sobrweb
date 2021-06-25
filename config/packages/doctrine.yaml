@@ -40,8 +40,8 @@ doctrine:
             #     alias: ManualBundle
         dql:
             numeric_functions:
-                standard_length: App\Query\StandardLength
-                volume_timber: App\Query\VolumeTimber
+                standard_length: App\Doctrine\Query\StandardLength
+                volume_timber: App\Doctrine\Query\VolumeTimber
                 unnest: DoctrineExtensions\Query\Postgresql\Unnest
                 volume_boards: DoctrineExtensions\Query\Postgresql\VolumeBoard
                 get_json_filed_by_key: DoctrineExtensions\Query\Postgresql\GetJsonFieldByKey

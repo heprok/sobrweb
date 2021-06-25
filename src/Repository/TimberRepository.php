@@ -44,6 +44,20 @@ class TimberRepository extends ServiceEntityRepository
         }
         return $qb;
     }
+
+    /**
+     * @return Timber[]
+     */
+    public function findByPeriod(DatePeriod $period, array $sqlWhere = []): array
+    {
+        return $this->getBaseQueryFromPeriod($period, $sqlWhere)
+            ->addSelect('volume_timber(t.length, t.mid_diam) as volume_timber')
+            ->addSelect('standard_length(t.length) as standart_length')
+            ->setMaxResults(1000)
+            ->getQuery()
+            ->getResult();
+    }
+
     /**
      * @return Batch[] Returns an array of Timber objects
      */

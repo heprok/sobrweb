@@ -102,11 +102,11 @@ export default {
             title: "Брёвна",
             to: "timber",
           },
-          {
-            icon: "mdi-account-multiple",
-            title: "Операторы",
-            to: "operators",
-          },
+          // {
+          //   icon: "mdi-account-multiple",
+          //   title: "Операторы",
+          //   to: "operators",
+          // },
           {
             icon: "mdi-clock-fast",
             title: "Простои",

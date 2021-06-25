@@ -5,7 +5,7 @@
         <shift-date-picker
           isShowBatch
           :filterSqlWhere="filters"
-          urlReport="report/timber/registry"
+          urlReport="report/timber_registry"
         >
         </shift-date-picker>
       </v-col>

@@ -32,6 +32,54 @@ export default {
       loader: false,
       infoCards: [
         {
+          nameCard: "Кол-во брёвен",
+          color: "info",
+          icon: "mdi-gradient",
+          urlApi: "/infocard/countTimbers",
+          duration: [
+            {
+              url: "/currentShift",
+              title: "за смену",
+            },
+            {
+              url: "/today",
+              title: "за сутки",
+            },
+            {
+              url: "/weekly",
+              title: "за неделю",
+            },
+            {
+              url: "/mountly",
+              title: "за месяц",
+            },
+          ],
+        },
+        {
+          nameCard: "Объём брёвен",
+          color: "info",
+          icon: "mdi-gradient",
+          urlApi: "/infocard/volumeTimbers",
+          duration: [
+            {
+              url: "/currentShift",
+              title: "за смену",
+            },
+            {
+              url: "/today",
+              title: "за сутки",
+            },
+            {
+              url: "/weekly",
+              title: "за неделю",
+            },
+            {
+              url: "/mountly",
+              title: "за месяц",
+            },
+          ],
+        },
+        {
           nameCard: "Текущая смена",
           color: "info",
           subIcon: "mdi-tag",
@@ -45,32 +93,6 @@ export default {
           subIcon: "mdi-camera-timer",
           urlApi: "/infocard/lastDowntime",
         },
-        // {
-        //   nameCard: "Кол-во карманов",
-        //   subTitle: "ПФМ: Выгруженно карманов",
-        //   color: "info",
-        //   icon: "mdi-gradient",
-        //   subIcon: "mdi-tag",
-        //   urlApi: "/infocard/pfm/countUnloadPocket",
-        //   duration: [
-        //     {
-        //       url: "/currentShift",
-        //       title: "за смену",
-        //     },
-        //     {
-        //       url: "/today",
-        //       title: "за сутки",
-        //     },
-        //     {
-        //       url: "/weekly",
-        //       title: "за неделю",
-        //     },
-        //     {
-        //       url: "/mountly",
-        //       title: "за месяц",
-        //     },
-        //   ],
-        // },
       ],
     };
   },

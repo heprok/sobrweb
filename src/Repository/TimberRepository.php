@@ -71,8 +71,8 @@ class TimberRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    
-    public function getReportTimberByPeriod(DatePeriod $period, array $sqlWhere =[])
+
+    public function getReportTimberByPeriod(DatePeriod $period, array $sqlWhere = [])
     {
         $qb = $this->getBaseQueryFromPeriod($period, $sqlWhere);
         return $qb
@@ -89,7 +89,24 @@ class TimberRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-
+    public function getCountTimbersByPeriod(DatePeriod $period, array $sqlWhere = []) : int
+    {
+        $qb = $this->getBaseQueryFromPeriod($period, $sqlWhere);
+        return $qb
+            ->select('count(1) AS count_timbers')
+            ->getQuery()
+            ->getResult()[0]['count_timber'] ?? 0;
+    }
+    
+    
+    public function getVolumeTimbersByPeriod(DatePeriod $period, array $sqlWhere = []) : float
+    {
+        $qb = $this->getBaseQueryFromPeriod($period, $sqlWhere);
+        return $qb
+            ->select('sum(volume_timber(t.length, t.mid_diam)) AS volume_timbers')
+            ->getQuery()
+            ->getResult()[0]['volume_timber'] ?? 0.0;
+    }
     // /**
     //  * @return Timber[] Returns an array of Timber objects
     //  */

@@ -45,27 +45,27 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><p class="font-weight-regular mb-0">Объём пил-мат м³</p></td>
+                  <td><p class="font-weight-regular mb-0">Объём брёвен м³</p></td>
                   <td align="center" v-for="shift in shifts" :key="shift.name">
-                    {{ shift.volumeBoards }}
+                    {{ shift.volumeTimbers }}
                   </td>
                 </tr>
                 <tr>
                   <td><p class="font-weight-regular mb-0">Итоговый объём м³</p></td>
                   <td align="center" :colspan="shifts.length">
-                    <p class="font-weight-bold">{{ summary.volumeBoards }}</p>
+                    <p class="font-weight-bold">{{ summary.volumeTimbers }}</p>
                   </td>
                 </tr>
                 <tr>
-                  <td><p class="font-weight-regular mb-0">Кол-во пил-мат шт</p></td>
+                  <td><p class="font-weight-regular mb-0">Кол-во брёвен шт</p></td>
                   <td align="center" v-for="shift in shifts" :key="shift.name">
-                    {{ shift.countBoards }}
+                    {{ shift.countTimbers }}
                   </td>
                 </tr>
                 <tr>
                   <td><p class="font-weight-regular mb-0">Количество шт</p></td>
                   <td align="center" :colspan="shifts.length">
-                    <p class="font-weight-bold">{{ summary.countBoards }}</p>
+                    <p class="font-weight-bold">{{ summary.countTimbers }}</p>
                   </td>
                 </tr>
                 <tr>
@@ -125,13 +125,8 @@ export default {
       urlApi: this.$store.state.apiEntryPoint + "/infocard/summaryDay",
       urlsToReport: [
         {
-          name: "Отчёт по доскам",
-          url: "report/board",
-          type: "pdf",
-        },
-        {
-          name: "Выгруженные карманы",
-          url: "report/unload",
+          name: "Отчёт по брёвнам",
+          url: "report/timber",
           type: "pdf",
         },
         { name: "Отчёт по простям", url: "report/downtimes", type: "pdf" },

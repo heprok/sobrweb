@@ -10,7 +10,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Tlc\ManualBundle\Entity\Duty as BaseDuty;
 
 #[ORM\Entity(repositoryClass: DutyRepository::class)]
-#[ORM\Table(schema: "sobr", name: "duty",  options: ["comment" => "Список должностей"])]
+#[ORM\Table(schema: "dic", name: "duty",  options: ["comment" => "Список должностей"])]
 #[
     ApiResource(
         collectionOperations: ["get", "post"],

@@ -10,8 +10,8 @@ use Doctrine\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
-    const startDate = '2021-06-10';
-    const endDate =  '2021-06-27';
+    const startDate = '2021-07-23';
+    const endDate =  '2021-07-29';
 
     public function load(ObjectManager $manager)
     {
@@ -50,7 +50,7 @@ class AppFixtures extends Fixture
                 $randomDates[] = $date;
             }
         }
-
+        asort($randomDates);
         return $randomDates;
     }
 }

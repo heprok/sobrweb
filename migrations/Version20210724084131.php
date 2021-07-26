@@ -26,7 +26,6 @@ final class Version20210724084131 extends AbstractMigration
         $this->addSql('CREATE TABLE dic.duty (id CHAR(2) NOT NULL, name VARCHAR(30) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('COMMENT ON TABLE dic.duty IS \'Список должностей\'');
         $this->addSql('DROP TABLE sobr.duty');
-        $this->addSql('DROP TABLE sobr.duty');
     }
 
     public function down(Schema $schema): void

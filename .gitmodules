@@ -1,6 +1,0 @@
-[submodule "bundles/ManualBundle"]
-	path = bundles/ManualBundle
-	url = git@github.com:technolescom/ManualBundle.git
-[submodule "bundles/ReportBundle"]
-	path = bundles/ReportBundle
-	url = git@github.com:technolescom/ReportBundle

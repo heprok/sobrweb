@@ -28,7 +28,7 @@ use Tlc\ReportBundle\Entity\BaseEntity;
 class Timber
 {
     protected DateTime $drec;
-
+    
     #[ORM\Id]
     #[ORM\Column(name: "drec", type: "string", options: ["comment" => 'Дата записи'])]
     #[Groups(["timber:read"])]

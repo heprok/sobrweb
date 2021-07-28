@@ -42,17 +42,6 @@ export default {
         if (children.type == "rule") {
           if (!children.query.value || children.query.value == "") return;
           let query = {};
-          // console.log(children.query)
-          // console.log(Array.isArray(children.query.value) ? children.query.value.join() + ')' : ' false');
-          // let value =
-          //   children.query.id +
-          //   " " +
-          //   children.query.operator +
-          //   " " +
-          //   (Array.isArray(children.query.value)
-          //     ? "(" + children.query.value.join() + ")"
-          //     : children.query.value);
-          // sqlQuery += value;
           query.id = children.query.id;
           query.nameTable = children.query.nameTable;
           query.logicalOperator = this.query.operator;
@@ -207,12 +196,34 @@ export default {
         });
       return rule;
     },
+    getRuleQuality() {
+      let rule = {
+        type: RuleTypes.TEXT,
+        id: "quality",
+        label: "Качество",
+        nameTable: "t.",
+      };
+      this.countLoadingRules++;
+
+      return rule;
+    },   
+    getRuleSweep() {
+      let rule = {
+        type: RuleTypes.NUMBER,
+        id: "sweep",
+        label: "Кривизна, см/м",
+        nameTable: "t.",
+      };
+      this.countLoadingRules++;
+
+      return rule;
+    },   
     getRuleLength() {
       let rule = {
         type: RuleTypes.MULTI_SELECT,
-        id: "nom_length",
+        id: "length",
         label: "Длина, мм.",
-        nameTable: "b.",
+        nameTable: "t.",
       };
       Axios.get(this.$store.state.apiEntryPoint + "/lengths")
         .then((response) => {
@@ -229,79 +240,40 @@ export default {
         .catch((err) => {
           this.$snotify.error(err.data);
           this.$snotify.error("Ошибка при загрузке длин");
+        });
+      return rule;
+    },    
+    getRulebatch() {
+      let rule = {
+        type: RuleTypes.MULTI_SELECT,
+        id: "batch",
+        label: "Партия",
+        nameTable: "t.",
+      };
+      Axios.get(this.$store.state.apiEntryPoint + "/batches")
+        .then((response) => {
+          let data = response.data["hydra:member"];
+          rule.options = data.map((batch) => {
+            return {
+              value: batch.id,
+              label: batch.info,
+            };
+          });
+          this.countLoadingRules++;
+        })
+        .catch((err) => {
+          this.$snotify.error(err.data);
+          this.$snotify.error("Ошибка при загрузке партий");
           console.log(err);
         });
       return rule;
     },    
-    getRuleWidth() {
-      let rule = {
-        type: RuleTypes.MULTI_SELECT,
-        id: "nom_width",
-        label: "Ширина, мм.",
-        nameTable: "b.",
-      };
-      Axios.get(this.$store.state.apiEntryPoint + "/widths")
-        .then((response) => {
-          let data = response.data["hydra:member"];
-          rule.options = data.map((length) => {
-            return {
-              value: length.nom,
-              label: length.nom,
-            };
-          });
-          this.countLoadingRules++;
-          // console.log(rule.options);
-        })
-        .catch((err) => {
-          this.$snotify.error(err.data);
-          this.$snotify.error("Ошибка при загрузке ширин");
-          console.log(err);
-        });
-      return rule;
-    },    
-    getRuleThickness() {
-      let rule = {
-        type: RuleTypes.MULTI_SELECT,
-        id: "nom_thickness",
-        label: "Толщина, мм.",
-        nameTable: "b.",
-      };
-      Axios.get(this.$store.state.apiEntryPoint + "/thicknesses")
-        .then((response) => {
-          let data = response.data["hydra:member"];
-          rule.options = data.map((length) => {
-            return {
-              value: length.nom,
-              label: length.nom,
-            };
-          });
-          this.countLoadingRules++;
-          // console.log(rule.options);
-        })
-        .catch((err) => {
-          this.$snotify.error(err.data);
-          this.$snotify.error("Ошибка при загрузке длин");
-          console.log(err);
-        });
-      return rule;
-    },
-    getRuleCut() {
-      let rule = {
-        type: RuleTypes.TEXT,
-        id: "cut",
-        label: "Сечение",
-        nameTable: "b.",
-      };
-      this.countLoadingRules++;
-
-      return rule;
-    },     
     getRulePocket() {
       let rule = {
         type: RuleTypes.NUMBER,
         id: "pocket",
         label: "Карман",
-        nameTable: "b.",
+        nameTable: "t.",
       };
       this.countLoadingRules++;
 
@@ -313,6 +285,28 @@ export default {
         id: "code",
         label: "Код ошибки",
         nameTable: "e.",
+      };
+      this.countLoadingRules++;
+
+      return rule;
+    },    
+    getRuleDiam() {
+      let rule = {
+        type: RuleTypes.NUMBER,
+        id: "mid_diam",
+        label: "Диаметр, мм",
+        nameTable: "t.",
+      };
+      this.countLoadingRules++;
+
+      return rule;
+    },    
+    getRuleTaper() {
+      let rule = {
+        type: RuleTypes.NUMBER,
+        id: "taper",
+        label: "Сбег см/м",
+        nameTable: "t.",
       };
       this.countLoadingRules++;
 
@@ -334,15 +328,6 @@ export default {
         case "event_source":
           this.rules.push(this.getRuleEventSource());
           break;
-        case "width":
-          this.rules.push(this.getRuleWidth());
-          break;
-        case "thickness":
-          this.rules.push(this.getRuleThickness());
-          break;
-        case "cut":
-          this.rules.push(this.getRuleCut());
-          break;
         case "species":
           this.rules.push(this.getRuleSpecies());
           break;
@@ -354,6 +339,22 @@ export default {
           break;
         case 'code':
           this.rules.push(this.getRuleCode());
+          break;        
+        case 'diam':
+          this.rules.push(this.getRuleDiam());
+          break;        
+        case 'taper':
+          this.rules.push(this.getRuleTaper());
+          break;        
+        case 'batch':
+          this.rules.push(this.getRulebatch());
+          break;        
+        case 'sweep':
+          this.rules.push(this.getRuleSweep());
+          break;        
+        case 'quality':
+          this.rules.push(this.getRuleQuality());
+          break;        
         default:
           break;
       }

@@ -32,8 +32,9 @@ final class BatchCollectionDataProvider implements ContextAwareCollectionDataPro
 
         $repositoryTimber = $manager->getRepository(Timber::class);
 
+        
         if ($repositoryTimber instanceof TimberRepository)
-            $batchs = array_key_exists('period', $context['filters']) ?
+            $batchs = array_key_exists('period', $context['filters'] ?? []) ?
                 $repositoryTimber->findBatchByPeriod(BaseEntity::getPeriodFromString($context['filters']['period']))
                 : $repositoryBatch->findAll();
 

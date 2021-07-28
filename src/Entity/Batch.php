@@ -55,7 +55,7 @@ class Batch
     private bool $repeat = false;
 
     private DateTime $firstDateTimber;
-    
+
     private DateTime $lastDateTimber;
 
 
@@ -149,15 +149,20 @@ class Batch
     }
 
     #[Groups(["batch:read"])]
-    public function getFirstDateTimberFormat(string $format = BaseEntity::DATETIME_FOR_FRONT) : string
+    public function getInfo(): string
+    {
+        return $this->transport->getName() . ' ' . $this->waybill;
+    }
+
+    #[Groups(["batch:read"])]
+    public function getFirstDateTimberFormat(string $format = BaseEntity::DATETIME_FOR_FRONT): string
     {
         return $this->firstDateTimber->format($format);
     }
 
     #[Groups(["batch:read"])]
-    public function getLastDateTimberFormat(string $format = BaseEntity::DATETIME_FOR_FRONT) : string
+    public function getLastDateTimberFormat(string $format = BaseEntity::DATETIME_FOR_FRONT): string
     {
         return $this->lastDateTimber->format($format);
     }
-
 }

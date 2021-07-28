@@ -9,87 +9,34 @@ use App\Report\Timber\RegistryTimberPdfReport;
 use App\Report\Timber\RegistryTimberReport;
 use App\Report\Timber\TimberPdfReport;
 use App\Repository\PeopleRepository;
-use App\Repository\ShiftRepository;
 use App\Repository\BreakSheduleRepository;
 use App\Repository\TimberRepository;
-use DateInterval;
-use DatePeriod;
-use DateTime;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Tlc\ReportBundle\Report\AbstractReport;
+use Tlc\ReportBundle\Controller\AbstractReportController;
 
 #[Route("report/timber", name: "report_timber_")]
-class TimberController extends AbstractController
+class TimberController extends AbstractReportController
 {
     public function __construct(
-        private PeopleRepository $peopleRepository,
+        PeopleRepository $peopleRepository,
         private TimberRepository $timberRepository,
         private BreakSheduleRepository $breakSheduleRepository,
     ) {
+        parent::__construct($peopleRepository);
     }
 
-    #[Route("/{start}...{end}/people/{idsPeople}/pdf", name: "for_period_with_people_show_pdf")]
-    public function showReportForPeriodWithPeoplePdf(string $start, string $end, string $idsPeople)
+    #[Route("/pdf", name: "show_pdf")]
+    public function showReportPdf()
     {
-        $request = Request::createFromGlobals();
-        $sqlWhere = json_decode($request->query->get('sqlWhere') ?? '[]');
-
-        $idsPeople = explode('...', $idsPeople);
-        $peoples = [];
-        foreach ($idsPeople as $idPeople) {
-            if ($idPeople != '')
-                $peoples[] = $this->peopleRepository->find($idPeople);
-        }
-        $startDate = new DateTime($start);
-        $endDate = new DateTime($end);
-        $period = new DatePeriod($startDate, new DateInterval('P1D'), $endDate);
-        $report = new TimberReport($period, $this->timberRepository, $peoples, $sqlWhere);
-        $this->showPdf($report);
-    }
-
-    #[Route("/{start}...{end}/pdf", name: "for_period_show_pdf")]
-    public function showReportForPeriodPdf(string $start, string $end)
-    {
-        $this->showReportForPeriodWithPeoplePdf($start, $end, '');
-    }
-
-    private function showPdf(AbstractReport $report)
-    {
-        $report->init();
+        $report = new TimberReport($this->period, $this->timberRepository, $this->peoples, $this->sqlWhere);
         $pdf = new TimberPdfReport($report);
         $pdf->render();
     }
 
-    #[Route("_registry/{start}...{end}/people/{idsPeople}/pdf", name:"from_registry_for_period_with_people_show_pdf")]
-    public function showReportFromRegistryForPeriodWithPeoplePdf(string $start, string $end, string $idsPeople)
+    #[Route("_registry/pdf", name:"from_registry_show_pdf")]
+    public function showReportFromRegistryPdf()
     {
-        $request = Request::createFromGlobals();
-        $sqlWhere = $sqlWhere = json_decode($request->query->get('sqlWhere') ?? '[]');
-        
-        $idsPeople = explode('...', $idsPeople);
-        $peoples = [];
-        foreach ($idsPeople as $idPeople) {
-            if ($idPeople != '')
-                $peoples[] = $this->peopleRepository->find($idPeople);
-        }
-        $startDate = new DateTime($start);
-        $endDate = new DateTime($end);
-        $period = new DatePeriod($startDate, new DateInterval('P1D'), $endDate);
-        $report = new RegistryTimberReport($period, $this->timberRepository, $peoples, $sqlWhere);
-        $this->showRegistryPdf($report);
-    }
-
-    #[Route("_registry/{start}...{end}/pdf", name:"from_registry_for_period_show_pdf")]
-    public function showReportFromRegistryForPeriodPdf(string $start, string $end)
-    {
-        $this->showReportFromRegistryForPeriodWithPeoplePdf($start, $end, '');
-    }
-
-    private function showRegistryPdf(AbstractReport $report)
-    {
-        $report->init();
+        $report = new RegistryTimberReport($this->period, $this->timberRepository, $this->peoples, $this->sqlWhere);
         $pdf = new RegistryTimberPdfReport($report);
         $pdf->render();
     }

@@ -18,7 +18,7 @@ export default {
   name: "report_timber_timber_dashboard",
   data() {
     return {
-        filters: [],
+        filters: ['diam', 'sweep', 'batch', 'species', 'lengts', 'quality'],
     };
   },
   methods: {},
